@@ -1,0 +1,38 @@
+clear all;
+clc;
+[y,fs]= audioread('akashdeep.wav');
+
+l1 = 3.5e4-2.85e4;
+nf = ceil(l1/480);
+yn = y(1:480);
+snr1=[];
+c=2.85e4;
+for i=1:nf 
+    y1= y(c:c+479);
+    snr1(i)=snr(y1,yn) ;
+    
+    c= c+480 ;
+    
+end     
+   
+%yn = y(1:480);
+%snr=[];
+%for i=1:nf 
+   % snr(i)=snr(y1(i),yn) ;
+%end
+
+
+
+
+
+%l=length(y);
+%x=(0:(1/fs):((l-1)/fs))
+figure(1)
+xlabel('time(sec)')
+ylabel('amplitude')
+plot(snr1)
+xlabel('No. of Frames ')
+ylabel('Signal to Noise Ratio (zero)')
+
+%for narrow band spectrogram 
+

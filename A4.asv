@@ -1,0 +1,53 @@
+%Assignment 4 CRL707
+clc;
+clear all;
+close all;
+
+%Reading Input signal
+[A,Fs] = audioread('akashdeep.wav');
+A = A./max(abs(A));
+
+%Sampling frequency reduced by half
+j=1;
+for i=1:2:length(A)
+    a(j) = A(i);
+    j=j+1;
+end
+
+%length(A)
+%length(a)
+%plot(a)
+
+%Spectrum of the voiced segment
+vs = a(39501:39660;%38401:38560);%47160:47320);
+N = length(vs);
+%w = hamming(N);
+%vs = vs.*w;
+vs_fft = 10*log10(abs(fft(vs)));
+f = Fs/2*(0:N-1)/N;
+figure(1)
+plot(f,vs_fft)
+
+%Linear Prediction Filter
+for i=1:11
+    s1 = vs(i:length(vs)-i);
+    s2 = vs(1:length(vs)-2*i+1);
+    R(i) = s1*s2';
+end
+
+%% RL and RR Matrix
+RR = R(2:11);
+for i=1:10
+    for j=1:10
+        RL(i,j) = R(abs(i-j)+1);
+    end
+end
+
+a_c = inv(RL)*RR';
+
+%% Residual Signal
+for i = 11:length(vs)
+    e(i) = a(i) - a_c'*a(i-1:-1:i-10)';
+end
+figure(2)
+plot(e)

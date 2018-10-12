@@ -1,0 +1,27 @@
+VoIP
+
+Voice over Internet Protocol (also voice over IP, VoIP or IP telephony) is a methodology and group of technologies for the delivery of voice communications and multimedia sessions over Internet Protocol (IP) networks, such as the Internet.
+involve signaling, channel setup, digitization of the analog voice signals, and encoding. Instead of being transmitted over a circuit-switched network
+They transport audio streams using special media delivery protocols that encode audio and video with audio codecs, and video codecs.
+
+
+Voice conversion
+It aims to change one or more aspect of a speech signal while preserving linguistic information.
+Voice conversion specifically aims to change a source speaker's speech in such a way that the generated ouptput is perceived as a sentence uttered by a target speaker.
+Mimicking spectrally and prosodically is still challenging.
+
+VC modifies speaker-dependent characteristics of the
+speech signal, such as spectral and prosodic aspects, in order to
+modify the perceived speaker identity while keeping the speakerindependent
+information (linguistic contents) the same.
+
+
+Q9
+a) The SNR for digit zero is varying between 14 dB and 43 dB.
+b) Zero: 110 samples in one cycle giving frequency 145.5 Hz.
+   Two: 125 samples in one cycle giving frequency 128 Hz
+d) The two digits in which largest variation is observed are 4 and 5.
+	Emax5 = 0.5260; Emin5 = 0.0374
+	SPLmax5 = 295.6483 dB: SPLmin5 = 242.7891
+	Emax4 = 0.8718 ; Emin4 = 0.0020 
+	SPLmax4 = 305.7558; SPLmin4 = 183.7771 
